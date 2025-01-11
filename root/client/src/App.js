@@ -31,7 +31,7 @@ import ResetPasswordForm from './components/ResetPasswordForm';
           
                     <div id="navigateDiv">
                       <Link to="/register">
-                        <button type="button" id="regcdister">{t('Register')}</button>
+                        <button type="button" id="register">{t('Register')}</button>
                       </Link>
                       <Link to="/login">
                         <button type="button" id="login">{t('Login')}</button>
