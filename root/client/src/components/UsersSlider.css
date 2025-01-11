@@ -1,0 +1,244 @@
+/* SLIDER STYLES */
+.slider-container {
+  width: 60%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: hsl(0, 0%, 6%);
+  border: 1px solid hsl(341, 82%, 51%);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 450px;
+}
+
+.slick-slider button {
+  color: #000;
+  background: rgba(181, 27, 27, 0.8);
+  border-radius: 50%;
+}
+
+.sliick-slide {
+  margin: 20px;
+  background-color: aqua;
+}
+
+.slider-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 2px solid hsl(330, 84%, 50%); /* Added border color */
+  transition: transform 0.3s;
+  height: 400px;
+  position: relative;
+}
+
+.slider-item:hover {
+  transform: scale(0.95);
+}
+
+/* Added styles for the card image */
+.card-image {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.card-title {
+  color: hsl(330, 84%, 50%);
+  font-style: italic;
+  font-size: 1.2em;
+  max-height: 2.4em; /* Approximately 2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-content { /* The contains the texts of the card */
+  background-color: hsl(0, 0%, 6%);
+  border-radius: 5px;
+  color: black;
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+.card-text { /* The text of the card */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+  color: white;
+  max-height: 4.5em; /* Approximately 4 lines */
+  white-space: nowrap;
+}
+
+.btn-floating.liked i {
+  margin: 0px;
+  color: red;
+  background-color: white;
+}
+
+.title { /* The title of the card */
+  color: hsl(330, 84%, 50%);
+  text-align: center;
+  font-size: 1.8em;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.personName { /* The name of the person */
+  color: hsl(330, 84%, 50%);
+  margin-top: -10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* WHEN THE CARD IS EXPANDED */
+
+.expand {
+  font-size: 0.7em;
+  color: hsl(330, 84%, 50%);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.expanded-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: hwb(0 9% 91%);
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  height: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border: 2px solid hsl(330, 84%, 50%);
+}
+
+.card-text-expand {
+  font-size: 0.9em;
+  color: white;
+  max-height: none; /* Remove any max-height restriction */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.expanded-card .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  cursor: pointer;
+  color: hsl(330, 84%, 50%);
+  border: 2px solid hsl(330, 84%, 50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.card-title-expand {
+  color: hsl(330, 84%, 50%);
+  font-style: italic;
+  font-size: 1.2em;
+  max-height: 2.4em; /* Approximately 2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-content-expand {
+  background-color: hsl(0, 0%, 6%);
+  border-radius: 5px;
+  color: black;
+  width: 100%;
+  height: 50%;
+  position: relative;
+  overflow: auto; /* Enable scrolling */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.personName-expand {
+  color: hsl(330, 84%, 50%);
+  background-color: hwb(0 9% 91%);
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 999px) {
+  .slider-item {
+    padding: 20px;
+  }
+
+  .slider-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1em;
+  }
+
+  .card-text {
+    font-size: 0.8em;
+  }
+
+  .expanded-card {
+    width: 90%;
+    height: 90%;
+  }
+  .card-content-expand {
+    background-color: hsl(0, 0%, 6%);
+    border-radius: 5px;
+    color: black;
+    width: 100%;
+    height: 70%;
+    position: relative;
+    overflow: auto; /* Enable scrolling */
+    margin-top: 20px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-item {
+    padding: 20px;
+  }
+
+  .slider-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1em;
+  }
+
+  .card-text {
+    font-size: 0.8em;
+  }
+}
