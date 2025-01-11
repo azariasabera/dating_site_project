@@ -1,6 +1,7 @@
 # dating_site_project
 
 Description of my whole project:
+
 Below I have tried to implement a social media platform where users can create an account, upload a profile picture, write a bio, and like/unlike other users.
 
 Before going into the details of the project, I would like to mention that I have used the following technologies:
