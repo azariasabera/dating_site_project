@@ -1,19 +1,17 @@
 {
   "name": "root",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Full-stack dating application",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && npm start",
     "server": "cd server && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "dev-prod": "concurrently \"cd server && npm start\" \"cd client && npm run build\""
-
   },
-  "author": "",
+  "keywords": [],
+  "author": "Azarias",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^10.0.5"
   }
 }
