@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import API_URL from "../config";
+
 function Register() {   
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
@@ -14,7 +16,7 @@ function Register() {
 
         let formData = new FormData(e.target);
 
-        const response = await fetch('https://advanced-web-project.onrender.com/api/user/register', {
+        const response = await fetch(`${API_URL}/api/user/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

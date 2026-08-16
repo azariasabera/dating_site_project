@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import API_URL from "../config";
+
 function ResetPasswordForm() {
     const { t } = useTranslation();
     const { token } = useParams();
@@ -18,7 +20,7 @@ function ResetPasswordForm() {
         }
 
         try {
-            const response = await fetch(`https://advanced-web-project.onrender.com/api/user/reset-password/${token}`, {
+            const response = await fetch(`${API_URL}/api/user/reset-password/${token}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -5,6 +5,8 @@ import './Header.css';
 import { Home } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 
+import API_URL from "../config";
+
 function Header() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -40,7 +42,7 @@ function Header() {
   useEffect(() => {
     const getProfilePicture = async () => {
       try {
-        const response = await fetch('https://advanced-web-project.onrender.com/api/user/image', {
+        const response = await fetch(`${API_URL}/api/user/image`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('auth_token')}`,

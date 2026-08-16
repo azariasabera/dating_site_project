@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import API_URL from '../config';
+
 function AddImage() {
     const { t } = useTranslation();
     const [status, setStatus] = useState('');
@@ -10,7 +12,7 @@ function AddImage() {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const response = await fetch('https://advanced-web-project.onrender.com/api/user', {
+                const response = await fetch(`${API_URL}/api/user`, {
                     method: 'GET',
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem('auth_token')}`
@@ -31,7 +33,7 @@ function AddImage() {
         const formData = new FormData(e.target);
 
         try {
-            const response = await fetch('https://advanced-web-project.onrender.com/api/user/image', {
+            const response = await fetch(`${API_URL}/api/user/image`, {
                 method: 'POST',
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('auth_token')}`

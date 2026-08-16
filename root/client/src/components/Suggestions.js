@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UsersSlider from './UsersSlider';
+
+import API_URL from "../config";
+
 function Suggestions() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
@@ -10,7 +13,7 @@ function Suggestions() {
   useEffect(() => {
     const checkAuth = async () => {
       if (localStorage.getItem('auth_token')) {
-        const response = await fetch('https://advanced-web-project.onrender.com/api/user', {
+        const response = await fetch(`${API_URL}/api/user`, {
           method: 'GET',
           headers: { 
             'Authorization': `Bearer ${localStorage.getItem('auth_token')}`
@@ -33,7 +36,7 @@ function Suggestions() {
   useEffect(() => {
     const fetchUsers = async () => {
       if (isAuthenticated) {
-        const response = await fetch('https://advanced-web-project.onrender.com/api/all-users', {
+        const response = await fetch(`${API_URL}/api/all-users`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('auth_token')}`

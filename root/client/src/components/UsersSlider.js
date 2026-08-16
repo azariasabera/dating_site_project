@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './UsersSlider.css';
 
+import API_URL from "../config";
+
 function UsersSlider({ users }) {
   const [likedUsers, setLikedUsers] = useState([]); // Track liked state for each user
   const [unlikedUsers, setUnlikedUsers] = useState([]); // Track unliked state for each user
@@ -16,7 +18,7 @@ function UsersSlider({ users }) {
   useEffect(() => { // To get the like status of each user
     const fetchLikedUsers = async () => {
       try {
-        const response = await fetch('https://advanced-web-project.onrender.com/api/user/like', {
+        const response = await fetch(`${API_URL}/api/user/like`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('auth_token')}`
@@ -45,7 +47,7 @@ function UsersSlider({ users }) {
     setUnlikedUsers(updatedUnlikedUsers);
 
     try {
-      const response = await fetch('https://advanced-web-project.onrender.com/api/user/like', { // update the ChatUser model
+      const response = await fetch(`${API_URL}/api/user/like`, { // update the ChatUser model
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

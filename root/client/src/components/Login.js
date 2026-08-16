@@ -3,6 +3,8 @@ import './Form.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import API_URL from "../config";
+
 function Login() {
   const [errorMessage, setErrorMessage] = useState('');
   const [email, setEmail] = useState('');
@@ -26,7 +28,7 @@ function Login() {
 
     let formData = new FormData(e.target);
 
-    const response = await fetch('https://advanced-web-project.onrender.com/api/user/login', {
+    const response = await fetch(`${API_URL}/api/user/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

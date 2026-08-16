@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './Form.css'
 import { useTranslation } from 'react-i18next'
 
+import API_URL from "../config"
+
 function ResetPassword() {
     const { t } = useTranslation();
     const [responseMessage, setResponseMessage] = useState('');
@@ -11,7 +13,7 @@ function ResetPassword() {
         const formData = new FormData(e.target);
 
         try {
-            const response = await fetch('https://advanced-web-project.onrender.com/api/user/reset-password', {
+            const response = await fetch(`${API_URL}/api/user/reset-password`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

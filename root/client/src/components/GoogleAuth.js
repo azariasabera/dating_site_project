@@ -2,12 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
+import API_URL from "../config";
+
 function GoogleAuth() {
   const navigate = useNavigate();
 
   const handleGoogleLogin = () => {
     // Redirect the user to Google OAuth URL
-    window.location.href = 'https://advanced-web-project.onrender.com/api/auth/google';
+    window.location.href = `${API_URL}/api/auth/google`;
   };
 
   const checkToken = () => { // checks if this site has a token in the URL

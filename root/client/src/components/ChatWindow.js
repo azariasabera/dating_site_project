@@ -3,6 +3,8 @@ import { FiSearch } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import './Chat.css';
 
+import API_URL from "../config";
+
 function ChatWindow({ chat, user }) {
     const { t } = useTranslation();
     const [messages, setMessages] = useState([]);
@@ -15,7 +17,7 @@ function ChatWindow({ chat, user }) {
     useEffect(() => {
         const fetchMessages = async () => {
             try {
-                const response = await fetch(`https://advanced-web-project.onrender.com/api/chat?sender=${user.email}&recipient=${chat.email}`, {
+                const response = await fetch(`${API_URL}/api/chat?sender=${user.email}&recipient=${chat.email}`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('auth_token')}`
@@ -51,7 +53,7 @@ function ChatWindow({ chat, user }) {
         if (newMessage.trim() === '') return;
 
         try {
-            const response = await fetch('https://advanced-web-project.onrender.com/api/chat', {
+            const response = await fetch(`${API_URL}/api/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
