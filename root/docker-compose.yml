@@ -1,0 +1,84 @@
+# Docker Compose configuration for local development.
+#
+# I currently use this file for LOCAL USE ONLY.
+#
+# I have dockerized the backend, and I can also run it independently with Docker.
+# I have NOT dockerized the frontend yet, so the full Docker Compose setup
+# cannot currently be used. I will add the client service once I containerize
+# the frontend as well.
+#
+# Usage:
+#
+#   1. Go to the project root:
+#        cd ~/GitHub/dating_site_project/root
+#
+#   2. Create my local environment file:
+#        cp .env.example .env
+#
+#      Then edit .env and fill in my actual environment variables.
+#
+#   3. Build and start the backend using Docker Compose:
+#        docker compose up --build server
+#
+#   4. Build and start the backend in detached mode:
+#        docker compose up --build -d server
+#
+#   5. View the backend logs:
+#        docker compose logs -f server
+#
+#   6. Stop and remove the backend container:
+#        docker compose down
+#
+# The backend is available at:
+#   http://localhost:1234
+#
+# Once I dockerize the frontend, I can add a client service to this file
+# and then run both services together with:
+#
+#   docker compose up --build
+#
+# Or in detached mode:
+#
+#   docker compose up --build -d
+
+services:
+
+  server:
+    build:
+      context: ./server
+
+    container_name: dating-site-server
+
+    restart: unless-stopped
+
+    ports:
+      - "1234:1234"
+
+    environment:
+      PORT: "1234"
+      NODE_ENV: development
+
+      MONGODB_URI: ${MONGODB_URI}
+      SECRET: ${SECRET}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      REFRESH_TOKEN: ${REFRESH_TOKEN}
+      EMAIL_USER: ${EMAIL_USER}
+      FRONTEND_URL: ${FRONTEND_URL}
+
+  client:
+    build:
+      context: ./client
+
+    container_name: dating-site-client
+
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      CI: "true"
+
+    depends_on:
+      - server
