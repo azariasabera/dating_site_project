@@ -1,50 +1,50 @@
-  {
+{
     "name": "client",
     "version": "1.0.0",
     "description": "Frontend API for my application",
     "main": "index.js",
     "engines": {
-      "node": "24.x"
+        "node": "24.x"
     },
     "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build"
+        "start": "react-scripts start",
+        "build": "react-scripts build"
     },
     "keywords": [],
     "author": "Azarias",
     "license": "ISC",
     "dependencies": {
-      "@emotion/react": "^11.14.0",
-      "@emotion/styled": "^11.14.1",
-      "@mui/icons-material": "^9.3.1",
-      "@mui/material": "^9.3.1",
-      "@testing-library/jest-dom": "^7.0.1",
-      "@testing-library/react": "^16.3.2",
-      "@testing-library/user-event": "^14.6.4",
-      "i18next": "^26.3.6",
-      "i18next-browser-languagedetector": "^8.2.1",
-      "i18next-http-backend": "^4.0.1",
-      "react": "^19.2.8",
-      "react-dom": "^19.2.8",
-      "react-i18next": "^17.0.11",
-      "react-icons": "^5.7.0",
-      "react-router-dom": "^7.18.2",
-      "react-scripts": "^5.0.1",
-      "react-slick": "^0.31.0",
-      "slick-carousel": "^1.8.1",
-      "web-vitals": "^6.1.1"
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@mui/icons-material": "^9.3.1",
+        "@mui/material": "^9.3.1",
+        "@testing-library/jest-dom": "^7.0.1",
+        "@testing-library/react": "^16.3.2",
+        "@testing-library/user-event": "^14.6.4",
+        "i18next": "^26.3.6",
+        "i18next-browser-languagedetector": "^8.2.1",
+        "i18next-http-backend": "^4.0.1",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "react-i18next": "^17.0.11",
+        "react-icons": "^5.7.0",
+        "react-router-dom": "^7.18.2",
+        "react-scripts": "^5.0.1",
+        "react-slick": "^0.31.0",
+        "slick-carousel": "^1.8.1",
+        "web-vitals": "^6.1.1"
     },
     "browserslist": {
-      "production": [
-        ">0.2%",
-        "not dead",
-        "not op_mini all"
-      ],
-      "development": [
-        "last 1 chrome version",
-        "last 1 firefox version",
-        "last 1 safari version"
-      ]
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     },
-  "proxy": "http://localhost:1234"
+    "proxy": "http://localhost:1234"
 }
