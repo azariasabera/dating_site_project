@@ -54,18 +54,13 @@ services:
     ports:
       - "1234:1234"
 
+    env_file:
+      - ./server/.env
+    
     environment:
       PORT: "1234"
       NODE_ENV: development
-
-      MONGODB_URI: ${MONGODB_URI}
-      SECRET: ${SECRET}
-      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
-      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
-      REFRESH_TOKEN: ${REFRESH_TOKEN}
-      EMAIL_USER: ${EMAIL_USER}
-      FRONTEND_URL: ${FRONTEND_URL}
-
+      
   client:
     build:
       context: ./client
