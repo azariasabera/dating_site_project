@@ -1,6 +1,8 @@
 # dating_site_project
 
-Description of my whole project:
+![TheDatingSite screenshot](root/client/public/frontpage.png)
+
+## Description of my project
 
 Below I have tried to implement a social media platform where users can create an account, upload a profile picture, write a bio, and like/unlike other users.
 
